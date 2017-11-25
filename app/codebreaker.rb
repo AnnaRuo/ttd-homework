@@ -20,18 +20,44 @@ class Codebreaker
         return
       end
 
-      if input.include?("1") || input.include?("2") || input.include?("3") || input.include?("4")
-        output.puts '-'
+      match = ''
+
+      if input.include?("1")
+        match = match + "-"
       end
 
-      if input.match?("4") || input.match?("3") || input.match?("2") || input.match?("1")
-        output.puts '+'
+      if input.include?("2")
+        match = match + "-"
       end
+
+      if input.include?("3")
+        match = match + "-"
+      end
+
+      if input.include?("4")
+        match = match + "-"
+      end
+
+      input_array = input.split(//)
+      secret_number_array = @secret_number.split(//)
+      exact_match = ''
+
+      result = input_array.zip(secret_number_array).map { | x , y | x == y }
+
+      result.each do |match_number|
+        if match_number == true
+          exact_match = '+'
+          match = match.chop
+        end
+      end
+
+      output.puts exact_match + match
 
       if input != @secret_number
         output.puts ''
         return
       end
+
     end
   end
 end
