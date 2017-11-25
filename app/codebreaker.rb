@@ -9,7 +9,7 @@ class Codebreaker
     def start(secret_number)
       @secret_number = secret_number
 
-      output.puts "Welcome to Codebreaker " + secret_number
+      output.puts "Welcome to Codebreaker"
       output.puts "Enter guess:"
     end
 
@@ -18,11 +18,9 @@ class Codebreaker
       # using the @secret_number
       if input.length > 4 || input.length < 4
         output.puts "Try guessing a number with four digits"
-      elsif
+      else
         input != @secret_number
         output.puts ''
-      else input.include? "1" || input.include? "2" || input.include? "3" || input.include? "4"
-        output.puts "-"
       end
     end
   end
