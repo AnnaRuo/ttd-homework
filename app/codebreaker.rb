@@ -46,7 +46,7 @@ class Codebreaker
 
       result.each do |match_number|
         if match_number == true
-          exact_match = '+'
+          exact_match = exact_match + '+'
           match = match.chop
         end
       end
@@ -57,7 +57,6 @@ class Codebreaker
         output.puts ''
         return
       end
-
     end
   end
 end
