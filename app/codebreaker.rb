@@ -22,21 +22,25 @@ class Codebreaker
 
       match = ''
 
-      if input.include?("1")
+      for 0..4 in @secret_number do
         match = match + "-"
       end
-
-      if input.include?("2")
-        match = match + "-"
-      end
-
-      if input.include?("3")
-        match = match + "-"
-      end
-
-      if input.include?("4")
-        match = match + "-"
-      end
+      # if input.include? @secret_number add it to the match variable
+      # if input.include?(@secret_number[0])
+      #   match = match + "-"
+      # end
+      #
+      # if input.include?(@secret_number[1])
+      #   match = match + "-"
+      # end
+      #
+      # if input.include?(@secret_number[2])
+      #   match = match + "-"
+      # end
+      #
+      # if input.include?(@secret_number[3])
+      #   match = match + "-"
+      # end
 
       input_array = input.split(//)
       secret_number_array = @secret_number.split(//)
